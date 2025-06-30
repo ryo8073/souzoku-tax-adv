@@ -9,7 +9,7 @@
       "src": "inheritance-tax-frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "inheritance-tax-frontend/dist"
+        "distDir": "dist"
       }
     }
   ],
