@@ -13,14 +13,25 @@
       }
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "api/main.py"
+      "src": "/api/(.*)",
+      "dest": "/api/main.py"
     },
     {
-      "source": "/(.*)",
-      "destination": "inheritance-tax-frontend/dist/index.html"
+      "src": "/assets/(.*)",
+      "dest": "/inheritance-tax-frontend/dist/assets/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/inheritance-tax-frontend/dist/favicon.ico"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/inheritance-tax-frontend/dist/index.html"
     }
   ]
 } 
