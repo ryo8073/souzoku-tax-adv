@@ -15,12 +15,12 @@
   ],
   "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/main.py"
+      "source": "/api/(.*)",
+      "destination": "api/main.py"
     },
     {
-      "src": "/(.*)",
-      "dest": "inheritance-tax-frontend/dist/index.html"
+      "source": "/(.*)",
+      "destination": "inheritance-tax-frontend/dist/index.html"
     }
   ]
 } 
