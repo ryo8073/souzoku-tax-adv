@@ -106,3 +106,5 @@ dmypy.json
 # Excel temporary files
 ~$*.xlsx
 
+
+.vercel

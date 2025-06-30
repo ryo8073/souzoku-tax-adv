@@ -7,7 +7,20 @@
     },
     {
       "src": "inheritance-tax-frontend/package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "inheritance-tax-frontend/dist"
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "inheritance-tax-frontend/dist/index.html"
     }
   ]
 } 
