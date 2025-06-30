@@ -7,25 +7,20 @@
     },
     {
       "src": "inheritance-tax-frontend/package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/main.py"
+      "source": "/api/(.*)",
+      "destination": "api/main.py"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "inheritance-tax-frontend/dist/assets/$1"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "inheritance-tax-frontend/dist/favicon.ico"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "inheritance-tax-frontend/dist/index.html"
+      "source": "/(.*)",
+      "destination": "inheritance-tax-frontend/dist/index.html"
     }
   ]
 } 
