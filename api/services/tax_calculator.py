@@ -3,7 +3,7 @@
 """
 import math
 from typing import Dict, List, Tuple
-from src.models.inheritance import (
+from models.inheritance import (
     Heir, HeirType, RelationshipType, FamilyStructure, TaxCalculationInput,
     TaxCalculationResult, HeirTaxDetail, DivisionInput, DivisionResult,
     ValidationError, ValidationResult, TAX_TABLE, BASIC_DEDUCTION_BASE,

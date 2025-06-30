@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "inheritance-tax-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "inheritance-tax-frontend/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/inheritance-tax-frontend/dist/index.html"
+    }
+  ]
+} 

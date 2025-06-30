@@ -1,16 +1,6 @@
-import os
-import sys
-# DON'T CHANGE THIS !!!
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-
 from flask import Flask, jsonify
-# from flask_sqlalchemy import SQLAlchemy
-# from flask_migrate import Migrate
 from flask_cors import CORS
-
-from src.routes.inheritance import inheritance_bp
-# from src.routes.user import user_bp
-# from src.models.user import db
+from routes.inheritance import inheritance_bp
 
 app = Flask(__name__)
 CORS(app)

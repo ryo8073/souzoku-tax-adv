@@ -3,8 +3,8 @@
 """
 from flask import Blueprint, request, jsonify
 from flask_cors import CORS
-from src.services.tax_calculator import InheritanceTaxCalculator
-from src.models.inheritance import (
+from services.tax_calculator import InheritanceTaxCalculator
+from models.inheritance import (
     FamilyStructure, TaxCalculationInput, DivisionInput,
     ValidationError, ValidationResult
 )
@@ -212,7 +212,7 @@ def calculate_actual_division():
         heirs_data = data.get('heirs', [])
         
         # 相続人データの復元
-        from src.models.inheritance import Heir, HeirType, RelationshipType
+        from models.inheritance import Heir, HeirType, RelationshipType
         heirs = []
         for heir_data in heirs_data:
             heirs.append(Heir(
@@ -296,7 +296,7 @@ def calculate_actual_division():
 def get_tax_table():
     """相続税速算表取得API"""
     try:
-        from src.models.inheritance import TAX_TABLE
+        from models.inheritance import TAX_TABLE
         
         return jsonify({
             'success': True,

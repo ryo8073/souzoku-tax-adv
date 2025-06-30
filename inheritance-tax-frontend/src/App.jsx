@@ -26,8 +26,6 @@ function App() {
   const [currentStep, setCurrentStep] = useState('family')
   const [formInputData, setFormInputData] = useState(null) // 入力データを保持
 
-  const API_BASE_URL = 'http://127.0.0.1:5001';
-
   const handleFamilyStructureSubmit = async (data) => {
     try {
       // 入力データを保持
@@ -36,7 +34,7 @@ function App() {
       setTaxableAmount(data.taxableAmount)
       
       // 法定相続人判定API呼び出し
-      const heirsResponse = await fetch(`${API_BASE_URL}/api/calculation/heirs`, {
+      const heirsResponse = await fetch(`/api/calculation/heirs`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +50,7 @@ function App() {
         setLegalHeirs(heirsData.result.legal_heirs)
         
         // 相続税計算API呼び出し
-        const taxResponse = await fetch(`${API_BASE_URL}/api/calculation/tax-amount`, {
+        const taxResponse = await fetch(`/api/calculation/tax-amount`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -77,7 +75,7 @@ function App() {
 
   const handleActualDivisionSubmit = async (divisionData) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/calculation/actual-division`, {
+      const response = await fetch(`/api/calculation/actual-division`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
