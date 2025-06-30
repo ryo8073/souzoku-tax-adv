@@ -20,7 +20,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "inheritance-tax-frontend/dist/index.html"
+      "destination": "/index.html"
     }
   ]
 } 
