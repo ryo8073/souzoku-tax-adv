@@ -7,10 +7,7 @@
     },
     {
       "src": "inheritance-tax-frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "inheritance-tax-frontend/dist"
-      }
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
@@ -19,8 +16,12 @@
       "dest": "api/main.py"
     },
     {
+      "src": "/assets/(.*)",
+      "dest": "inheritance-tax-frontend/dist/assets/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/inheritance-tax-frontend/dist/index.html"
+      "dest": "inheritance-tax-frontend/dist/index.html"
     }
   ]
 } 
